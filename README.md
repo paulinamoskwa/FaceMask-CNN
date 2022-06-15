@@ -43,7 +43,7 @@ To figure out which of the three approaches is the most efficient, I relied on s
 
 #### **1. Accuracy**
 
-<p align="center">
+.center[
 
 |Import Option|Train Accuracy|Validation Accuracy|
 |:-|:-:|:-:|
@@ -51,7 +51,7 @@ To figure out which of the three approaches is the most efficient, I relied on s
 |`flow_from_directory`, `Dataset.from_generator`| 0.9906 | 0.8498 | 
 |`image_dataset_from_directory`| 0.9995 | 0.9133 |
 
-</p>
+]
 
 The third option proved to be the most efficient not only because of the highest validation accuracy value, but also because of the smallest gap between train and validation accuracy. 
 
@@ -125,7 +125,7 @@ This section was not actually introduced for the purpose of adding anything to t
 
 Once the first part of the work was completed, I moved onto creating the ensemble. Using the third option as the method for importing the images (`image_dataset_from_directory`), I trained seven models independently of each other. The results are reported in the notebook [Ensemble 1 - Training](https://github.com/PaulinoMoskwa/FaceMask-CNN/blob/master/Notebooks/Ensemble%201%20-%20Training.ipynb) and also in the table:
 
-<table>
+<table align="center">
     <tr>
         <th><div style="text-align:left;">   Base Model </div></th>
         <th><div style="text-align:center;"> Train Accuracy </div></th>

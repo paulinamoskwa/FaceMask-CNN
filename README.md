@@ -14,7 +14,7 @@ The aim of this project is to build an automatic classifier that can recognize w
 </p>
 
 ## 📝 **Approach and results**
-Through the use of `TensorFlow` and `Keras`, I build an ensamble of convolutional neural networks for classification. 
+Through the use of `TensorFlow` and `Keras`, I build an ensemble of convolutional neural networks for classification. 
 
 First of all, `TensorFlow` offers three different options for reading the dataset as input, therefore, I initially decided to test the efficiency of the three options:
 * `flow_from_directory`

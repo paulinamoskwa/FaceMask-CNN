@@ -45,7 +45,7 @@ To figure out which of the three approaches is the most efficient, I relied on s
 
 <table align="center">
     <tr>
-        <th><div align="left">   Import Option </div></th>
+        <th><div align="center"> Import Option </div></th>
         <th><div align="center"> Train Accuracy </div></th>
         <th><div align="center"> Validation Accuracy </div></th>
     </tr>
@@ -91,24 +91,24 @@ It calculates metrics globally by counting the total true positives, false negat
     </tr>
     <tr>
         <td><div style="text-align:left;"><code> flow_from_directory </code></div></td>
-        <td><div style="text-align:center;"> 0.85748 </div></td>
-        <td><div style="text-align:center;"> 0.85748 </div></td>
-        <td><div style="text-align:center;"> 0.85748 </div></td>
-        <td><div style="text-align:center;"> 0.85748 </div></td>
+        <td><div align="center"> 0.85748 </div></td>
+        <td><div align="center"> 0.85748 </div></td>
+        <td><div align="center"> 0.85748 </div></td>
+        <td><div align="center"> 0.85748 </div></td>
     </tr>
     <tr>
         <td><div style="text-align:left;"><code> flow_from_directory </code>, <code> Dataset.from_generator</code></div></td>
-        <td><div style="text-align:center;"> 0.84976 </div></td>
-        <td><div style="text-align:center;"> 0.84976 </div></td>
-        <td><div style="text-align:center;"> 0.84976 </div></td>
-        <td><div style="text-align:center;"> 0.84976 </div></td>
+        <td><div align="center"> 0.84976 </div></td>
+        <td><div align="center"> 0.84976 </div></td>
+        <td><div align="center"> 0.84976 </div></td>
+        <td><div align="center"> 0.84976 </div></td>
     </tr>
     <tr>
         <td><div style="text-align:left;"><code> image_dataset_from_directory </code></div></td>
-        <td><div style="text-align:center;"> 0.97387 </div></td>
-        <td><div style="text-align:center;"> 0.97387 </div></td>
-        <td><div style="text-align:center;"> 0.97387 </div></td>
-        <td><div style="text-align:center;"> 0.97387 </div></td>
+        <td><div align="center"> 0.97387 </div></td>
+        <td><div align="center"> 0.97387 </div></td>
+        <td><div align="center"> 0.97387 </div></td>
+        <td><div align="center"> 0.97387 </div></td>
     </tr>
 </table>
 
@@ -125,24 +125,24 @@ It calculates metrics for each label, and finds their unweighted mean. This does
     </tr>
     <tr>
         <td><div style="text-align:left;"><code> flow_from_directory </code></div></td>
-        <td><div style="text-align:center;"> 0.85551 </div></td>
-        <td><div style="text-align:center;"> 0.85565 </div></td>
-        <td><div style="text-align:center;"> 0.85748 </div></td>
-        <td><div style="text-align:center;"> 0.85454 </div></td>
+        <td><div align="center"> 0.85551 </div></td>
+        <td><div align="center"> 0.85565 </div></td>
+        <td><div align="center"> 0.85748 </div></td>
+        <td><div align="center"> 0.85454 </div></td>
     </tr>
     <tr>
         <td><div style="text-align:left;"><code> flow_from_directory </code>, <code> Dataset.from_generator</code></div></td>
-        <td><div style="text-align:center;"> 0.84730 </div></td>
-        <td><div style="text-align:center;"> 0.84810 </div></td>
-        <td><div style="text-align:center;"> 0.84976 </div></td>
-        <td><div style="text-align:center;"> 0.84723 </div></td>
+        <td><div align="center"> 0.84730 </div></td>
+        <td><div align="center"> 0.84810 </div></td>
+        <td><div align="center"> 0.84976 </div></td>
+        <td><div align="center"> 0.84723 </div></td>
     </tr>
     <tr>
         <td><div style="text-align:left;"><code> image_dataset_from_directory </code></div></td>
-        <td><div style="text-align:center;"> 0.97375 </div></td>
-        <td><div style="text-align:center;"> 0.97348 </div></td>
-        <td><div style="text-align:center;"> 0.97387 </div></td>
-        <td><div style="text-align:center;"> 0.97356 </div></td>
+        <td><div align="center"> 0.97375 </div></td>
+        <td><div align="center"> 0.97348 </div></td>
+        <td><div align="center"> 0.97387 </div></td>
+        <td><div align="center"> 0.97356 </div></td>
     </tr>
 </table>
 
@@ -159,24 +159,24 @@ It calculates metrics for each label, and finds their average weighted by the nu
     </tr>
     <tr>
         <td><div style="text-align:left;"><code> flow_from_directory </code></div></td>
-        <td><div style="text-align:center;"> 0.85617 </div></td>
-        <td><div style="text-align:center;"> 0.85748 </div></td>
-        <td><div style="text-align:center;"> 0.85748 </div></td>
-        <td><div style="text-align:center;"> 0.85580 </div></td>
+        <td><div align="center"> 0.85617 </div></td>
+        <td><div align="center"> 0.85748 </div></td>
+        <td><div align="center"> 0.85748 </div></td>
+        <td><div align="center"> 0.85580 </div></td>
     </tr>
     <tr>
         <td><div style="text-align:left;"><code> flow_from_directory </code>, <code> Dataset.from_generator</code></div></td>
-        <td><div style="text-align:center;"> 0.84818 </div></td>
-        <td><div style="text-align:center;"> 0.84976 </div></td>
-        <td><div style="text-align:center;"> 0.84976 </div></td>
-        <td><div style="text-align:center;"> 0.84851 </div></td>
+        <td><div align="center"> 0.84818 </div></td>
+        <td><div align="center"> 0.84976 </div></td>
+        <td><div align="center"> 0.84976 </div></td>
+        <td><div align="center"> 0.84851 </div></td>
     </tr>
     <tr>
         <td><div style="text-align:left;"><code> image_dataset_from_directory </code></div></td>
-        <td><div style="text-align:center;"> 0.97385 </div></td>
-        <td><div style="text-align:center;"> 0.97387 </div></td>
-        <td><div style="text-align:center;"> 0.97387 </div></td>
-        <td><div style="text-align:center;"> 0.97381 </div></td>
+        <td><div align="center"> 0.97385 </div></td>
+        <td><div align="center"> 0.97387 </div></td>
+        <td><div align="center"> 0.97387 </div></td>
+        <td><div align="center"> 0.97381 </div></td>
     </tr>
 </table>
 
@@ -209,38 +209,38 @@ Once the first part of the work was completed, I moved onto creating the ensembl
     </tr>
     <tr>
         <td><div style="text-align:left;">   EfficientNetB3 </div></td>
-        <td><div style="text-align:center;"> 0.9916 </div></td>
-        <td style="background-color:green;color:white;"><div style="text-align:center;"> 0.9305 </div></td>
+        <td><div align="center"> 0.9916 </div></td>
+        <td style="background-color:green;color:white;"><div align="center"> 0.9305 </div></td>
     </tr>
     <tr>
         <td><div style="text-align:left;">   Xception </div></td>
-        <td style="background-color:red;color:white;"><div style="text-align:center;"> 0.8858 </div></td>
-        <td style="background-color:red;color:white;"><div style="text-align:center;"> 0.7844 </div></td>
+        <td style="background-color:red;color:white;"><div align="center"> 0.8858 </div></td>
+        <td style="background-color:red;color:white;"><div align="center"> 0.7844 </div></td>
     </tr>
     <tr>
         <td><div style="text-align:left;">   ResNet50V2 </div></td>
-        <td><div style="text-align:center;"> 0.9529 </div></td>
-        <td><div style="text-align:center;"> 0.8325 </div></td>
+        <td><div align="center"> 0.9529 </div></td>
+        <td><div align="center"> 0.8325 </div></td>
     </tr>
     <tr>
         <td><div style="text-align:left;">   InceptionV3 </div></td>
-        <td style="background-color:green;color:white;"><div style="text-align:center;"> 0.9977 </div></td>
-        <td><div style="text-align:center;"> 0.8931 </div></td>
+        <td style="background-color:green;color:white;"><div align="center"> 0.9977 </div></td>
+        <td><div align="center"> 0.8931 </div></td>
     </tr>
     <tr>
         <td><div style="text-align:left;">   InceptionResNetV2 </div></td>
-        <td><div style="text-align:center;"> 0.9944 </div></td>
-        <td><div style="text-align:center;"> 0.8996 </div></td>
+        <td><div align="center"> 0.9944 </div></td>
+        <td><div align="center"> 0.8996 </div></td>
     </tr>
     <tr>
         <td><div style="text-align:left;">   DenseNet201 </div></td>
-        <td><div style="text-align:center;"> 0.9399 </div></td>
-        <td><div style="text-align:center;"> 0.8901 </div></td>
+        <td><div align="center"> 0.9399 </div></td>
+        <td><div align="center"> 0.8901 </div></td>
     </tr>
     <tr>
         <td><div style="text-align:left;">   EfficientNetV2S </div></td>
-        <td><div style="text-align:center;"> 0.9702 </div></td>
-        <td><div style="text-align:center;"> 0.8967 </div></td>
+        <td><div align="center"> 0.9702 </div></td>
+        <td><div align="center"> 0.8967 </div></td>
     </tr>
 </table>
 

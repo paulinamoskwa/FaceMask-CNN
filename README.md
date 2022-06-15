@@ -1,18 +1,18 @@
 # **Face Mask CNN-Classifier with `TensorFlow` e `Keras`**
 
-<center>
+<p align="center">
 <img src='./Miscellaneous/img00.png' width='700'/>
-</center>
+</p>
 
 ## 📖 **About**
 
 The aim of this project is to build an automatic classifier that can recognize whether in a photo all the people are wearing masks, only some of them, or none at all. The dataset is available on [ kaggle](https://www.kaggle.com/competitions/artificial-neural-networks-and-deep-learning-2020). It is an artificial dataset (of about 5.614 images), so some images are particularly problematic (or, otherwise, funny), for example:
 
-<center>
+<p align="center">
 <img src='./Miscellaneous/img01.png' width='400'/>
 
 *In the first line there are problematic images.*
-</center>
+</p>
 
 ## 📝 **Approach and results**
 Through the use of `TensorFlow` and `Keras`, I build an ensamble of convolutional neural networks for classification. 
@@ -44,7 +44,7 @@ To figure out which of the three approaches is the most efficient, I relied on s
 
 #### **1. Accuracy**
 
-<center>
+<p align="center">
 
 |Import Option|Train Accuracy|Validation Accuracy|
 |:-|:-:|:-:|
@@ -52,16 +52,16 @@ To figure out which of the three approaches is the most efficient, I relied on s
 |`flow_from_directory`, `Dataset.from_generator`| 0.9906 | 0.8498 | 
 |`image_dataset_from_directory`| 0.9995 | 0.9133 |
 
-</center>
+</p>
 
 The third option proved to be the most efficient not only because of the highest validation accuracy value, but also because of the smallest gap between train and validation accuracy. 
 
 #### **2. Confusion matrix**
-<center>
+<p align="center">
 <img src='./Miscellaneous/img02.png' width='800'/>
 
 *From left to right: `flow_from_directory`,* <br> *`flow_from_directory` and `Dataset.from_generator`,* <br> *`image_dataset_from_directory`.*
-</center>
+</p>
 
 Also with this evaluation criterion, the third option turned out to be the best.
 
@@ -69,7 +69,7 @@ Also with this evaluation criterion, the third option turned out to be the best.
 *Version*: Micro<br>
 It calculates metrics globally by counting the total true positives, false negatives and false positives.
 
-<center>
+<p align="center">
 
 |Import Option|Precision|Recall|Accuracy|F1|
 |:-|:-:|:-:|:-:|:-:|
@@ -77,12 +77,12 @@ It calculates metrics globally by counting the total true positives, false negat
 |`flow_from_directory`, `Dataset.from_generator`| 0.84976 | 0.84976 | 0.84976 | 0.84976 |
 |`image_dataset_from_directory`| 0.97387 | 0.97387 | 0.97387 | 0.97387 |
 
-</center>
+</p>
 
 *Version*: Macro<br>
 It calculates metrics for each label, and finds their unweighted mean. This does not take label imbalance into account.
 
-<center>
+<p align="center">
 
 |Import Option|Precision|Recall|Accuracy|F1|
 |:-|:-:|:-:|:-:|:-:|
@@ -90,12 +90,12 @@ It calculates metrics for each label, and finds their unweighted mean. This does
 |`flow_from_directory`, `Dataset.from_generator`| 0.84730 | 0.84810 | 0.84976 | 0.84723 |
 |`image_dataset_from_directory`| 0.97375 | 0.97348 | 0.97387 | 0.97356 |
 
-</center>
+</p>
 
 *Version*: Weighted<br>
 It calculates metrics for each label, and finds their average weighted by the number of true instances for each label. This alters 'macro' to account for label imbalance.
 
-<center>
+<p align="center">
 
 |Import Option|Precision|Recall|Accuracy|F1|
 |:-|:-:|:-:|:-:|:-:|
@@ -103,32 +103,32 @@ It calculates metrics for each label, and finds their average weighted by the nu
 |`flow_from_directory`, `Dataset.from_generator`| 0.84818 | 0.84976 | 0.84976 | 0.84851 |
 |`image_dataset_from_directory`| 0.97385 | 0.97387 | 0.97387 | 0.97381 |
 
-</center>
+</p>
 
 In all cases and in all indices, the third option prevails.
 
 ### 🔎 **GradCAM**
 This section was not actually introduced for the purpose of adding anything to the comparison between the three methods of importing images. Instead, it was included as a matter of 'Explainable AI'. As good as a model can be as a classifier, it is necessary that its decisions be justified in some way. Through the introduction of GradCAM, it is possible to understand which section of the photo the model focused on to make its prediction. 
 
-<center>
+<p align="center">
 <img src='./Miscellaneous/img03.png' width='500'/>
 
 *The more red an area is, the more it was considered during the final prediction.*
-</center>
+</p>
 
 <br>
 
-<center>
+<p align="center">
 <img src='./Miscellaneous/img04.png' width='700'/>
 
 *Predictions with the most important areas for each image.*
-</center>
+</p>
 
 ---------------------
 
 Once the first part of the work was completed, I moved onto creating the ensemble. Using the third option as the method for importing the images (`image_dataset_from_directory`), I trained seven models independently of each other. The results are reported in the notebook [Ensemble 1 - Training](https://github.com/PaulinoMoskwa/FaceMask-CNN/blob/master/Notebooks/Ensemble%201%20-%20Training.ipynb) and also in the table:
 
-<center>
+<p align="center">
 <table>
     <tr>
         <th><div style="text-align:left;">   Base Model </div></th>
@@ -171,6 +171,6 @@ Once the first part of the work was completed, I moved onto creating the ensembl
         <td><div style="text-align:center;"> 0.8967 </div></td>
     </tr>
 </table>
-</center>
+</p>
 
 From these seven neural networks I created a model that, taking an image as input, returns as a class the one that was predicted the most times among the seven networks. The results are reported in the notebook [Ensemble 2 - Prediction](https://github.com/PaulinoMoskwa/FaceMask-CNN/blob/master/Notebooks/Ensemble%202%20-%20Prediction.ipynb).

@@ -43,15 +43,28 @@ To figure out which of the three approaches is the most efficient, I relied on s
 
 #### **1. Accuracy**
 
-.center[
-
-|Import Option|Train Accuracy|Validation Accuracy|
-|:-|:-:|:-:|
-|`flow_from_directory`| 0.9913 | 0.8575 |
-|`flow_from_directory`, `Dataset.from_generator`| 0.9906 | 0.8498 | 
-|`image_dataset_from_directory`| 0.9995 | 0.9133 |
-
-]
+<table align="center">
+    <tr>
+        <th><div style="text-align:left;">   Import Option </div></th>
+        <th><div style="text-align:center;"> Train Accuracy </div></th>
+        <th><div style="text-align:center;"> Validation Accuracy </div></th>
+    </tr>
+    <tr>
+        <td><div style="text-align:left;"><code> flow_from_directory </code></div></td>
+        <td><div style="text-align:center;"> 0.9913 </div></td>
+        <td><div style="text-align:center;"> 0.8575 </div></td>
+    </tr>
+    <tr>
+        <td><div style="text-align:left;"><code> flow_from_directory </code>, <code> Dataset.from_generator</code></div></td>
+        <td><div style="text-align:center;"> 0.9906 </div></td>
+        <td><div style="text-align:center;"> 0.8498 </div></td>
+    </tr>
+    <tr>
+        <td><div style="text-align:left;"><code> image_dataset_from_directory </code></div></td>
+        <td><div style="text-align:center;"> 0.9995 </div></td>
+        <td><div style="text-align:center;"> 0.9133 </div></td>
+    </tr>
+</table>
 
 The third option proved to be the most efficient not only because of the highest validation accuracy value, but also because of the smallest gap between train and validation accuracy. 
 
@@ -68,41 +81,104 @@ Also with this evaluation criterion, the third option turned out to be the best.
 *Version*: Micro<br>
 It calculates metrics globally by counting the total true positives, false negatives and false positives.
 
-<p align="center">
-
-|Import Option|Precision|Recall|Accuracy|F1|
-|:-|:-:|:-:|:-:|:-:|
-|`flow_from_directory`| 0.85748 | 0.85748 | 0.85748 | 0.85748 |
-|`flow_from_directory`, `Dataset.from_generator`| 0.84976 | 0.84976 | 0.84976 | 0.84976 |
-|`image_dataset_from_directory`| 0.97387 | 0.97387 | 0.97387 | 0.97387 |
-
-</p>
+<table align="center">
+    <tr>
+        <th><div style="text-align:left;">   Import Option </div></th>
+        <th><div style="text-align:center;"> Precision </div></th>
+        <th><div style="text-align:center;"> Recall </div></th>
+        <th><div style="text-align:center;"> Accuracy </div></th>
+        <th><div style="text-align:center;"> F1 </div></th>
+    </tr>
+    <tr>
+        <td><div style="text-align:left;"><code> flow_from_directory </code></div></td>
+        <td><div style="text-align:center;"> 0.85748 </div></td>
+        <td><div style="text-align:center;"> 0.85748 </div></td>
+        <td><div style="text-align:center;"> 0.85748 </div></td>
+        <td><div style="text-align:center;"> 0.85748 </div></td>
+    </tr>
+    <tr>
+        <td><div style="text-align:left;"><code> flow_from_directory </code>, <code> Dataset.from_generator</code></div></td>
+        <td><div style="text-align:center;"> 0.84976 </div></td>
+        <td><div style="text-align:center;"> 0.84976 </div></td>
+        <td><div style="text-align:center;"> 0.84976 </div></td>
+        <td><div style="text-align:center;"> 0.84976 </div></td>
+    </tr>
+    <tr>
+        <td><div style="text-align:left;"><code> image_dataset_from_directory </code></div></td>
+        <td><div style="text-align:center;"> 0.97387 </div></td>
+        <td><div style="text-align:center;"> 0.97387 </div></td>
+        <td><div style="text-align:center;"> 0.97387 </div></td>
+        <td><div style="text-align:center;"> 0.97387 </div></td>
+    </tr>
+</table>
 
 *Version*: Macro<br>
 It calculates metrics for each label, and finds their unweighted mean. This does not take label imbalance into account.
 
-<p align="center">
-
-|Import Option|Precision|Recall|Accuracy|F1|
-|:-|:-:|:-:|:-:|:-:|
-|`flow_from_directory`| 0.85551 | 0.85565 | 0.85748 | 0.85454 |
-|`flow_from_directory`, `Dataset.from_generator`| 0.84730 | 0.84810 | 0.84976 | 0.84723 |
-|`image_dataset_from_directory`| 0.97375 | 0.97348 | 0.97387 | 0.97356 |
-
-</p>
+<table align="center">
+    <tr>
+        <th><div style="text-align:left;">   Import Option </div></th>
+        <th><div style="text-align:center;"> Precision </div></th>
+        <th><div style="text-align:center;"> Recall </div></th>
+        <th><div style="text-align:center;"> Accuracy </div></th>
+        <th><div style="text-align:center;"> F1 </div></th>
+    </tr>
+    <tr>
+        <td><div style="text-align:left;"><code> flow_from_directory </code></div></td>
+        <td><div style="text-align:center;"> 0.85551 </div></td>
+        <td><div style="text-align:center;"> 0.85565 </div></td>
+        <td><div style="text-align:center;"> 0.85748 </div></td>
+        <td><div style="text-align:center;"> 0.85454 </div></td>
+    </tr>
+    <tr>
+        <td><div style="text-align:left;"><code> flow_from_directory </code>, <code> Dataset.from_generator</code></div></td>
+        <td><div style="text-align:center;"> 0.84730 </div></td>
+        <td><div style="text-align:center;"> 0.84810 </div></td>
+        <td><div style="text-align:center;"> 0.84976 </div></td>
+        <td><div style="text-align:center;"> 0.84723 </div></td>
+    </tr>
+    <tr>
+        <td><div style="text-align:left;"><code> image_dataset_from_directory </code></div></td>
+        <td><div style="text-align:center;"> 0.97375 </div></td>
+        <td><div style="text-align:center;"> 0.97348 </div></td>
+        <td><div style="text-align:center;"> 0.97387 </div></td>
+        <td><div style="text-align:center;"> 0.97356 </div></td>
+    </tr>
+</table>
 
 *Version*: Weighted<br>
 It calculates metrics for each label, and finds their average weighted by the number of true instances for each label. This alters 'macro' to account for label imbalance.
 
-<p align="center">
-
-|Import Option|Precision|Recall|Accuracy|F1|
-|:-|:-:|:-:|:-:|:-:|
-|`flow_from_directory`| 0.85617 | 0.85748 | 0.85748 |0.85580 |
-|`flow_from_directory`, `Dataset.from_generator`| 0.84818 | 0.84976 | 0.84976 | 0.84851 |
-|`image_dataset_from_directory`| 0.97385 | 0.97387 | 0.97387 | 0.97381 |
-
-</p>
+<table align="center">
+    <tr>
+        <th><div style="text-align:left;">   Import Option </div></th>
+        <th><div style="text-align:center;"> Precision </div></th>
+        <th><div style="text-align:center;"> Recall </div></th>
+        <th><div style="text-align:center;"> Accuracy </div></th>
+        <th><div style="text-align:center;"> F1 </div></th>
+    </tr>
+    <tr>
+        <td><div style="text-align:left;"><code> flow_from_directory </code></div></td>
+        <td><div style="text-align:center;"> 0.85617 </div></td>
+        <td><div style="text-align:center;"> 0.85748 </div></td>
+        <td><div style="text-align:center;"> 0.85748 </div></td>
+        <td><div style="text-align:center;"> 0.85580 </div></td>
+    </tr>
+    <tr>
+        <td><div style="text-align:left;"><code> flow_from_directory </code>, <code> Dataset.from_generator</code></div></td>
+        <td><div style="text-align:center;"> 0.84818 </div></td>
+        <td><div style="text-align:center;"> 0.84976 </div></td>
+        <td><div style="text-align:center;"> 0.84976 </div></td>
+        <td><div style="text-align:center;"> 0.84851 </div></td>
+    </tr>
+    <tr>
+        <td><div style="text-align:left;"><code> image_dataset_from_directory </code></div></td>
+        <td><div style="text-align:center;"> 0.97385 </div></td>
+        <td><div style="text-align:center;"> 0.97387 </div></td>
+        <td><div style="text-align:center;"> 0.97387 </div></td>
+        <td><div style="text-align:center;"> 0.97381 </div></td>
+    </tr>
+</table>
 
 In all cases and in all indices, the third option prevails.
 

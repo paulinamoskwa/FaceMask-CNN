@@ -46,23 +46,23 @@ To figure out which of the three approaches is the most efficient, I relied on s
 <table align="center">
     <tr>
         <th><div style="text-align:left;">   Import Option </div></th>
-        <th><div style="text-align:center;"> Train Accuracy </div></th>
-        <th><div style="text-align:center;"> Validation Accuracy </div></th>
+        <th><div align="center"> Train Accuracy </div></th>
+        <th><div align="center"> Validation Accuracy </div></th>
     </tr>
     <tr>
         <td><div style="text-align:left;"><code> flow_from_directory </code></div></td>
-        <td><div style="text-align:center;"> 0.9913 </div></td>
-        <td><div style="text-align:center;"> 0.8575 </div></td>
+        <td><div align="center"> 0.9913 </div></td>
+        <td><div align="center"> 0.8575 </div></td>
     </tr>
     <tr>
         <td><div style="text-align:left;"><code> flow_from_directory </code>, <code> Dataset.from_generator</code></div></td>
-        <td><div style="text-align:center;"> 0.9906 </div></td>
-        <td><div style="text-align:center;"> 0.8498 </div></td>
+        <td><div align="center"> 0.9906 </div></td>
+        <td><div align="center"> 0.8498 </div></td>
     </tr>
     <tr>
         <td><div style="text-align:left;"><code> image_dataset_from_directory </code></div></td>
-        <td><div style="text-align:center;"> 0.9995 </div></td>
-        <td><div style="text-align:center;"> 0.9133 </div></td>
+        <td><div align="center"> 0.9995 </div></td>
+        <td><div align="center"> 0.9133 </div></td>
     </tr>
 </table>
 

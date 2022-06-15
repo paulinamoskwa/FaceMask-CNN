@@ -45,7 +45,7 @@ To figure out which of the three approaches is the most efficient, I relied on s
 
 <table align="center">
     <tr>
-        <th><div style="text-align:left;">   Import Option </div></th>
+        <th><div align="left">   Import Option </div></th>
         <th><div align="center"> Train Accuracy </div></th>
         <th><div align="center"> Validation Accuracy </div></th>
     </tr>

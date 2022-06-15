@@ -56,9 +56,10 @@ To figure out which of the three approaches is the most efficient, I relied on s
 The third option proved to be the most efficient not only because of the highest validation accuracy value, but also because of the smallest gap between train and validation accuracy. 
 
 #### **2. Confusion matrix**
+From left to right: `flow_from_directory`, `flow_from_directory` and `Dataset.from_generator`, `image_dataset_from_directory`:
+
 <p align="center">
-<img src='./Miscellaneous/img02.png' width='800'/><br>
-<i>From left to right: `flow_from_directory`, <br>`flow_from_directory` and `Dataset.from_generator`,<br> `image_dataset_from_directory`.</i>
+<img src='./Miscellaneous/img02.png' width='800'/>
 </p>
 
 Also with this evaluation criterion, the third option turned out to be the best.

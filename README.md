@@ -9,9 +9,8 @@
 The aim of this project is to build an automatic classifier that can recognize whether in a photo all the people are wearing masks, only some of them, or none at all. The dataset is available on [ kaggle](https://www.kaggle.com/competitions/artificial-neural-networks-and-deep-learning-2020). It is an artificial dataset (of about 5.614 images), so some images are particularly problematic (or, otherwise, funny), for example:
 
 <p align="center">
-<img src='./Miscellaneous/img01.png' width='400'/>
-
-*In the first line there are problematic images.*
+<img src='./Miscellaneous/img01.png' width='400'/><br>
+<i>In the first line there are problematic images.</i>
 </p>
 
 ## 📝 **Approach and results**
@@ -58,9 +57,8 @@ The third option proved to be the most efficient not only because of the highest
 
 #### **2. Confusion matrix**
 <p align="center">
-<img src='./Miscellaneous/img02.png' width='800'/>
-
-*From left to right: `flow_from_directory`,* <br> *`flow_from_directory` and `Dataset.from_generator`,* <br> *`image_dataset_from_directory`.*
+<img src='./Miscellaneous/img02.png' width='800'/><br>
+<i>From left to right: `flow_from_directory`, <br>`flow_from_directory` and `Dataset.from_generator`,<br> `image_dataset_from_directory`.</i>
 </p>
 
 Also with this evaluation criterion, the third option turned out to be the best.
@@ -111,24 +109,21 @@ In all cases and in all indices, the third option prevails.
 This section was not actually introduced for the purpose of adding anything to the comparison between the three methods of importing images. Instead, it was included as a matter of 'Explainable AI'. As good as a model can be as a classifier, it is necessary that its decisions be justified in some way. Through the introduction of GradCAM, it is possible to understand which section of the photo the model focused on to make its prediction. 
 
 <p align="center">
-<img src='./Miscellaneous/img03.png' width='500'/>
-
-*The more red an area is, the more it was considered during the final prediction.*
+<img src='./Miscellaneous/img03.png' width='500'/><br>
+<i>The more red an area is, the more it was considered during the final prediction.</i>
 </p>
 
 <br>
 
 <p align="center">
-<img src='./Miscellaneous/img04.png' width='700'/>
-
-*Predictions with the most important areas for each image.*
+<img src='./Miscellaneous/img04.png' width='700'/><br>
+<i>Predictions with the most important areas for each image.</i>
 </p>
 
 ---------------------
 
 Once the first part of the work was completed, I moved onto creating the ensemble. Using the third option as the method for importing the images (`image_dataset_from_directory`), I trained seven models independently of each other. The results are reported in the notebook [Ensemble 1 - Training](https://github.com/PaulinoMoskwa/FaceMask-CNN/blob/master/Notebooks/Ensemble%201%20-%20Training.ipynb) and also in the table:
 
-<p align="center">
 <table>
     <tr>
         <th><div style="text-align:left;">   Base Model </div></th>
@@ -171,6 +166,5 @@ Once the first part of the work was completed, I moved onto creating the ensembl
         <td><div style="text-align:center;"> 0.8967 </div></td>
     </tr>
 </table>
-</p>
 
 From these seven neural networks I created a model that, taking an image as input, returns as a class the one that was predicted the most times among the seven networks. The results are reported in the notebook [Ensemble 2 - Prediction](https://github.com/PaulinoMoskwa/FaceMask-CNN/blob/master/Notebooks/Ensemble%202%20-%20Prediction.ipynb).
